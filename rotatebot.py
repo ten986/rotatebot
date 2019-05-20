@@ -36,7 +36,6 @@ center = (int(width/2), int(height/2))
 DIFF_JST_FROM_UTC = 9
 time = datetime.datetime.utcnow() + datetime.timedelta(hours=DIFF_JST_FROM_UTC)
 angle = (time.hour + time.minute / 60.0+ time.second / 3600.0) * -30.0
-angle = math.radians(angle)
 #スケールを指定
 scale = 1.0
 #getRotationMatrix2D関数を使用
