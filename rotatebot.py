@@ -34,6 +34,9 @@ width = img.shape[1]
 center = (int(width/2), int(height/2))
 #回転角を指定
 time = datetime.now()
+
+print(time)
+
 angle = (time.hour + time.minute / 60.0+ time.second / 3600.0) * -30.0
 angle = math.radians(angle)
 #スケールを指定
