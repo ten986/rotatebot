@@ -22,7 +22,7 @@ auth = get_oauth()
 api = API(auth)
 
 try:
-  api.update_profile_image('tokei3.jpeg')
+  api.update_profile_image('tokei.jpeg')
 except:
   print("a")
   # print("error response code: " + str(e.response.status))
