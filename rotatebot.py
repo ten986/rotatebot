@@ -8,6 +8,8 @@ import random
 import datetime
 import base64
 import sys
+import urllib
+import cv2
 
 def get_oauth():
 	consumer_key = os.environ["CONSUMER_KEY"]
@@ -21,8 +23,27 @@ def get_oauth():
 auth = get_oauth()
 api = API(auth)
 
+
+img = cv2.imread('tokei.jpeg')
+#高さを定義
+height = img.shape[0]
+#幅を定義
+width = img.shape[1]
+#回転の中心を指定
+center = (int(width/2), int(height/2))
+#回転角を指定
+angle = 45.0
+#スケールを指定
+scale = 1.0
+#getRotationMatrix2D関数を使用
+trans = cv2.getRotationMatrix2D(center, angle , scale)
+#アフィン変換
+image2 = cv2.warpAffine(img, trans, (width, height))
+
+cv2.imwrite('out.jpg', image2)
+
 try:
-  api.update_profile_image('tokei.jpeg')
+  api.update_profile_image('out.jpg')
 except:
   print("a")
   # print("error response code: " + str(e.response.status))
