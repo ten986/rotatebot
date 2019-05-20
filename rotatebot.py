@@ -10,6 +10,7 @@ import base64
 import sys
 import urllib
 import cv2
+import math
 
 def get_oauth():
 	consumer_key = os.environ["CONSUMER_KEY"]
@@ -33,7 +34,8 @@ width = img.shape[1]
 center = (int(width/2), int(height/2))
 #回転角を指定
 time = datetime.now()
-angle = (time.hour+time.minute/60.0+time.second/3600.0)*-30.0
+angle = (time.hour + time.minute / 60.0+ time.second / 3600.0) * -30.0
+angle = math.radians(angle)
 #スケールを指定
 scale = 1.0
 #getRotationMatrix2D関数を使用
