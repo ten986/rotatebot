@@ -14,3 +14,5 @@ b64 = base64.encodestring(open(img_file, 'rb').read())
 
 params = {"image": b64}
 req = twitter.post("https://api.twitter.com/1.1/account/update_profile_image.json", params = params)
+
+print(req)
