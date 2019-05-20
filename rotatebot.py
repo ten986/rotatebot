@@ -5,7 +5,7 @@ from requests_oauthlib import OAuth1Session
 import json
 import os
 import random
-import datetime
+from datetime import datetime, timedelta
 import base64
 import sys
 import urllib
@@ -32,7 +32,8 @@ width = img.shape[1]
 #回転の中心を指定
 center = (int(width/2), int(height/2))
 #回転角を指定
-angle = 45.0
+time = datetime.now()
+angle = (time.hour+time.minute/60.0+time.second/3600.0)*-30.0
 #スケールを指定
 scale = 1.0
 #getRotationMatrix2D関数を使用
