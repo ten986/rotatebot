@@ -33,10 +33,8 @@ width = img.shape[1]
 #回転の中心を指定
 center = (int(width/2), int(height/2))
 #回転角を指定
-time = datetime.now()
-
-print(time)
-
+DIFF_JST_FROM_UTC = 9
+time = datetime.datetime.utcnow() + datetime.timedelta(hours=DIFF_JST_FROM_UTC)
 angle = (time.hour + time.minute / 60.0+ time.second / 3600.0) * -30.0
 angle = math.radians(angle)
 #スケールを指定
