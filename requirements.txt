@@ -19,4 +19,4 @@ six==1.11.0
 tweepy==3.7.0
 urllib3==1.25.2
 numpy==1.16.3
-opencv-python==4.1.0.25
+opencv-python==4.2.0.32
